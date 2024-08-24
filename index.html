@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Bakery - Homemade Cakes</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff7f50, #ff6347);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p.tagline {
+            font-size: 1.2em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .marquee-container {
+            background-color: rgba(255, 99, 71, 0.8);
+            padding: 10px;
+            font-size: 1.1em;
+            color: white;
+            overflow: hidden;
+            position: relative;
+            height: 50px;
+        }
+
+        .marquee {
+            position: absolute;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .intro {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .cake-menu {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            color: #ff6347;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #ff7f50;
+            color: white;
+            font-size: 1em;
+            letter-spacing: 1px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tbody tr:hover {
+            background-color: #ffebcd;
+        }
+
+        .contact-us {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        .contact-us p {
+            font-size: 1.1em;
+            margin: 10px 0;
+        }
+
+        button {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1em;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background-color: #1ebe57;
+        }
+
+        .instagram-button {
+            background-color: #E1306C;
+        }
+
+        .instagram-button:hover {
+            background-color: #c71e5e;
+        }
+
+        .youtube-button {
+            background-color: #FF0000;
+        }
+
+        .youtube-button:hover {
+            background-color: #cc0000;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+            bottom: 0;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2);
+            font-size: 1em;
+        }
+
+        footer p {
+            margin: 0;
+            padding: 10px;
+        }
+
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px auto;
+            max-width: 1000px;
+        }
+
+        .image-row img {
+            width: 32%;
+            height: auto;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p.tagline {
+                font-size: 1em;
+            }
+
+            .image-row img {
+                width: 48%; /* 2 images per row */
+            }
+
+            th, td {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .intro, .cake-menu, .contact-us {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p.tagline {
+                font-size: 0.9em;
+            }
+
+            .image-row img {
+                width: 100%; /* 1 image per row */
+            }
+
+            th, td {
+                padding: 8px;
+                font-size: 0.8em;
+            }
+
+            h2 {
+                font-size: 1.2em;
+            }
+
+            .intro, .cake-menu, .contact-us {
+                padding: 10px;
+            }
+
+            .marquee-container {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Aditya Bakery</h1>
+        <p class="tagline">Homemade Cakes with a Touch of Love</p>
+    </header>
+
+    <div class="marquee-container">
+        <div class="marquee">Book before 24 hours to ensure availability of our freshly baked homemade cakes!</div>
+    </div>
+
+    <main>
+        <section class="intro">
+            <p>Welcome to Aditya Bakery, where every cake is homemade with love, passion, and the finest ingredients. We take pride in creating delicious and beautifully crafted cakes that make every occasion special. Explore our wide range of flavors and enjoy the taste of home in every bite.</p>
+        </section>
+
+        <!-- Images Section -->
+        <section class="image-row">
+            <img src="image1.jpg" alt="Cake 1">
+            <img src="image2.jpg" alt="Cake 2">
+            <img src="image3.jpg" alt="Cake 3">
+        </section>
+        <section class="image-row">
+            <img src="image4.jpg" alt="Cake 4">
+            <img src="image5.jpg" alt="Cake 5">
+            <img src="image6.jpg" alt="Cake 6">
+        </section>
+        <section class="image-row">
+            <img src="image7.jpg" alt="Cake 7">
+            <img src="image8.jpg" alt="Cake 8">
+            <img src="image9.jpg" alt="Cake 9">
+        </section>
+        <section class="image-row">
+            <img src="image10.jpg" alt="Cake 10">
+            <img src="image11.jpg" alt="Cake 11">
+            <img src="image12.jpg" alt="Cake 12">
+        </section>
+
+        <!-- Cake Menu Section -->
+        <section class="cake-menu">
+            <h2>Our Homemade Cake Flavors & Prices</h2>
+
+            <!-- Table for 1 kg and 1/2 kg prices -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Flavor</th>
+                        <th>Price (1 kg) (₹)</th>
+                        <th>Price (1/2 kg) (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Vanilla flavour</td>
+                        <td>599</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pineapple flavour</td>
+                        <td>649</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Strawberry flavour</td>
+                        <td>649</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Eggless flavour</td>
+                        <td>699</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Butterscotch flavour</td>
+                        <td>699</td>
+                        <td>399</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Black forest flavour</td>
+                        <td>749</td>
+                        <td>429</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Chocolate flavour</td>
+                        <td>799</td>
+                        <td>449</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Red velvet flavour</td>
+                        <td>799</td>
+                        <td>449</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Blue berry flavour</td>
+                        <td>799</td>
+                        <td>449</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Black currant</td>
+                        <td>799</td>
+                        <td>449</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>Milky badam flavour</td>
+                        <td>899</td>
+                        <td>479</td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>Choco truffle flavour</td>
+                        <td>999</td>
+                        <td>549</td>
+                    </tr>
+                    <tr>
+                        <td>13</td>
+                        <td>Kesar pista</td>
+                        <td>1099</td>
+                        <td>569</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>Gulab jamun</td>
+                        <td>1199</td>
+                        <td>649</td>
+                    </tr>
+                    <tr>
+                        <td>15</td>
+                        <td>Rasmalai flavour</td>
+                        <td>1299</td>
+                        <td>679</td>
+                    </tr>
+                    <tr>
+                        <td>16</td>
+                        <td>Plum cake</td>
+                        <td>699</td>
+                        <td>349</td>
+                    </tr>
+                    <tr>
+                        <td>17</td>
+                        <td>Cup cakes small</td>
+                        <td>8 each</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>Medium cup cakes</td>
+                        <td>12 each</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>19</td>
+                        <td>Big size cup cakes</td>
+                        <td>17 each</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>20</td>
+                        <td>Tea time cake</td>
+                        <td>299</td>
+                        <td>149</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="contact-us">
+            <h2>Contact Us</h2>
+            <p>For orders or inquiries, feel free to reach out to us</p>
+            <a href="https://wa.me/918333985114" target="_blank">
+                <button>WhatsApp Us</button>
+            </a>
+            <a href="https://www.instagram.com/bhavani_cake_bakes?igsh=MTdhYzNqMDduamoxNg==" target="_blank">
+                <button class="instagram-button">Follow us on Instagram</button>
+            </a>
+            <a href="https://youtube.com/@bhavani_cake_bakes?si=of-TH9zRYkZ9GC7D" target="_blank">
+                <button class="youtube-button">Subscribe on YouTube</button>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Aditya Bakery. All rights reserved.</p>
+    </footer>
+</body>
+</html>
